@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 import Ingredients from "./Ingredients";
 const HeaderBottom = () => {
-  const { state, dispatch} =
+  const {  state, dispatch, random, setCheckout, setLoad, randomID} =
   useContext(Context);
   return (
     <div className="app-bottom">
@@ -36,6 +36,18 @@ const HeaderBottom = () => {
         <div className="total">
           <h3>Total</h3>
           <span className="total-span">{state[0].pizza.price}$</span>
+        </div>
+        <div className="btns">
+          <div className="btns-top">
+            <button onClick={random}>Save pizza</button>
+            <button onClick={() => setCheckout(true)}>Checkout pizza</button>
+          </div>
+          <div className="btns-bottom">
+            <button onClick={() => setLoad(true)}>Load pizza</button>
+          </div>
+        </div>
+        <div className="random">
+          <span>Your id code {randomID}</span>
         </div>
       </div>
     </div>
