@@ -1,7 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 import Ingredients from "./Ingredients";
+
 const HeaderBottom = () => {
+  function handleClick(event) {
+    var text = event.target.innerText;
+    navigator.clipboard.writeText(text);
+    alert("Текст скопирован: " + text);
+  }
   const {  state, dispatch, random, setCheckout, setLoad, randomID} =
   useContext(Context);
   return (
@@ -12,7 +18,7 @@ const HeaderBottom = () => {
             <img src={state[0].pizza.mainPicture} alt="Тесто" />
           </li>
           {state[0].pizza.ingredients.map((obj, i) => {
-            if (obj.total > 0) {
+            if (obj.total ) {
               return (
                 <li key={i}>
                   <img src={obj.picture} alt={obj.picture} />
@@ -47,7 +53,7 @@ const HeaderBottom = () => {
           </div>
         </div>
         <div className="random">
-          <span>Your id code {randomID}</span>
+          <p>Your id code <span onClick={handleClick}>{randomID}</span></p>
         </div>
       </div>
     </div>

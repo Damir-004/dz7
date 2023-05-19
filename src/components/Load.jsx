@@ -8,11 +8,10 @@ const Load = ({ setLoad, setRandomCoupon, loadPizza, randomCoupon }) => {
         <h3>Your id coupon:</h3>
         <div className="load-content__coupon">
           <input
-            value={randomCoupon}
             onChange={(e) => setRandomCoupon(e.target.value)}
             type="text"
           />
-          <button onClick={() => loadPizza()}>Click</button>
+          <button onClick={() => loadPizza() || setLoad(false)}>Click</button>
         </div>
       </div>
     </div>

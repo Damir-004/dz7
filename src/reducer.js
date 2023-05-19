@@ -40,6 +40,7 @@ export default function reducer (state, action) {
           },
         },
       ];
+      
     case "new":
       const newObj = state;
       newObj[0].pizza.id = action.payload;
@@ -53,6 +54,7 @@ export default function reducer (state, action) {
       });
       state.push(newObj[0]);
       return state;
+
     case "load":
       if (state[1].pizza.id === action.payload) {
         state[0] = state[1];

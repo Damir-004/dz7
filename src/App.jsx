@@ -21,7 +21,7 @@ function App() {
   const random = () => {
     let alphabet = "ABCDEFGHIKLMNOPQRSTVWXYZabcdefghiklmnopqrstvwxz123456789";
     let random = "";
-    while (random.length < 9) {
+    while (random.length < 10) {
       let index = Math.floor(Math.random() * alphabet.length);
       random += alphabet[index];
     }
@@ -31,7 +31,7 @@ function App() {
   const loadPizza = () => {
     if (randomCoupon === randomID) {
       dispatch({ type: "load", payload: randomID });
-      console.log("123");
+      console.log("1");
     }
   };
   const value = {
